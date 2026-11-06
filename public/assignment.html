@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus Cart | Student assignment</title><style>body{max-width:840px;margin:45px auto;padding:0 24px;font:15px/1.7 system-ui;color:#163c34;background:#faf9f5}h1,h2,h3{font-family:Georgia,serif;line-height:1.2}h1{font-size:40px}h2{margin-top:35px}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:9px;text-align:left}pre{white-space:pre-wrap;background:#ecefe7;padding:20px}code{font-size:13px}a{color:inherit}li{margin:6px 0}</style></head><body><a href="/shop">Back to Campus Cart</a><h1>Campus Cart QA Assignment</h1>
+
+<h2>Overview</h2>
+
+<p>Campus Cart is a demo shop for campus essentials. It has a React and Vite front end, an Express backend, a local catalog, user accounts, a cart and wishlist, and a working checkout flow. The app was built with quality in mind, but it is not bug free.</p>
+
+<p>Your task is to test the application like a software tester: explore it, plan your tests, execute them, and report what you find.</p>
+
+<h2>What you will do</h2>
+
+<ol>
+<li>Run the app locally. The README in the project folder explains how.</li>
+<li>Explore every page so you understand how the app is supposed to work.</li>
+<li>Write and document test cases for the features you examine.</li>
+<li>Execute your test cases and record the results.</li>
+<li>Write formal bug reports for the defects you find.</li>
+</ol>
+
+<h2>Expected requirements</h2>
+
+<p>The app should behave as follows. These are the expected requirements you test against. The full text of these requirements is the specification for your work.</p>
+
+<h3>Catalog and shop</h3>
+
+<ul>
+<li>The Shop page lists all products, each with its name, price, and category.</li>
+<li>Product categories are Stationery, Accessories, and Home &amp; Desk.</li>
+<li>The Shop has a search box and a price sort control.</li>
+<li>Each product has a Product page with its details and an Add to Cart action.</li>
+</ul>
+
+<h3>Cart</h3>
+
+<ul>
+<li>Items can be added to the cart and removed from the cart.</li>
+<li>Each cart line has a quantity input. Quantities below 1 or above 5 are not allowed.</li>
+<li>The cart shows a merchandise subtotal.</li>
+<li>The cart badge in the header reflects the number of items in the cart.</li>
+</ul>
+
+<h3>Discounts and shipping</h3>
+
+<ul>
+<li>A promo code box accepts codes. CAMPUS10 gives a 10 percent discount on the merchandise subtotal, with a minimum merchandise subtotal of 100 before the discount is applied. Invalid codes are rejected.</li>
+<li>Shipping costs 50 for any order below 500. Orders at or above 500 get free shipping. The shipping threshold is checked on the merchandise subtotal before any discount.</li>
+<li>There is no additional tax. The order total is the discounted merchandise subtotal plus shipping.</li>
+</ul>
+
+<h3>Checkout</h3>
+
+<ul>
+<li>Checkout collects a contact name, email, phone, address, city, and agreement to the terms.</li>
+<li>All fields are required. Values are trimmed before validation.</li>
+<li>The email must look like a normal address: a nonempty local part, then @, then a domain containing a dot, with no spaces.</li>
+<li>The phone must be exactly 11 digits and must begin with 09.</li>
+<li>Checkout cannot be submitted unless the terms checkbox is ticked.</li>
+<li>After a successful order the cart is cleared and an order confirmation is shown.</li>
+</ul>
+
+<h3>Accounts and orders</h3>
+
+<ul>
+<li>You can register an account and log in. Registration and login require a valid email format and a password of at least 8 characters.</li>
+<li>The Account page shows the profile. The Orders page shows your order history.</li>
+<li>The Contact page submits messages. The Help and Policies pages are informational.</li>
+<li>Guest checkout is supported: you can place a demo order without logging in.</li>
+</ul>
+
+<h3>Wishlist</h3>
+
+<ul>
+<li>Products can be added to and removed from the wishlist. The wishlist page lists the saved products.</li>
+</ul>
+
+<h2>Deliverables</h2>
+
+<p>Submit two files.</p>
+
+<ol>
+<li><strong>Test cases.</strong> A table or spreadsheet with at least 12 documented test cases. Each test case includes an ID, a title, the steps to reproduce, the expected result, and the actual result you observed. Target: 12 or more test cases.</li>
+<li><strong>Bug reports.</strong> Formal bug reports following the bug report template provided in the project folder. Target: 5 or more bug reports. Each report includes an ID, a title, severity, the steps to reproduce, the expected result, and the actual result.</li>
+</ol>
+
+<p>Quality matters more than quantity. A precise, reproducible report of one real defect is worth more than several vague ones.</p>
+
+<h2>Grading rubric (100 points)</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Test case coverage: the main features (shop, cart, promo codes, checkout, accounts) each have documented test cases</td>
+  <td>30</td>
+</tr>
+<tr>
+  <td>Test case quality: steps are clear and numbered, expected results are specific and checkable</td>
+  <td>20</td>
+</tr>
+<tr>
+  <td>Bug report quality: reports follow the template, include clear reproduction steps, expected versus actual, and a reasonable severity</td>
+  <td>25</td>
+</tr>
+<tr>
+  <td>Defect discovery: meaningful defects are found and correctly characterized (not duplicates, not cosmetic misunderstandings of the specification)</td>
+  <td>15</td>
+</tr>
+<tr>
+  <td>Communication: organized submission, consistent IDs, readable writing</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td><strong>Total</strong></td>
+  <td><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Tips</h2>
+
+<ul>
+<li>Explore first, then write test cases around what you see. Test both the happy path and edge cases: boundaries of the quantity input, boundary values for the shipping threshold, invalid promo codes, malformed emails and phone numbers, and the terms checkbox.</li>
+<li>Check that numbers shown in one place agree with numbers shown in another, for example the cart badge versus the cart lines, or the subtotal versus what checkout charges.</li>
+<li>Record actual results exactly as you observed them, including any message the app shows you.</li>
+<li>The bug report template in the project folder shows the required format for your reports.</li>
+</ul>
+
+<h2>Notes</h2>
+
+<ul>
+<li>All data in the app is fictional. Do not enter real personal information.</li>
+<li>Use the demo account shown on the login page, or register your own test account.</li>
+<li>You do not need any account or API setup to run the app.</li>
+</ul>
+</body></html>
